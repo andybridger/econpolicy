@@ -1,0 +1,28 @@
+regions,sectors
+EU,"Agriculture, Forestry and Fishing (Section A)"
+NEU,Mining & Quarrying (Section B)
+SCO,"Food Products, Beverages and Tobacco Products (Section CA)"
+RUK,"Textiles, Wearing Apparel and Leather (Section CB)"
+,"Wood and Paper Products, and Printing (Section CC)"
+,"Coke, Refined Petroleum Products, Chemicals and Chemical Products (Section CD,CE)"
+,Basic Pharmaceuticals and Their Products (Section CF)
+,"Rubber, Plastic and Other Non-Metallic Mineral Products (Section CG)"
+,"Basic Metals and Fabricated Metal Products, Except Machinery (Section CH)"
+,"Computer, Electronic and Optical Products (Section CI)"
+,Electrical Equipment (Section CJ)
+,Machinery and Equipment N.E.C. (Section CK)
+,Transport Equipment (Section CL)
+,"Furniture, Other Manufacturing; Repair and Installation of Machinery and Equipment (Section CM)"
+,"Utilities (Section D,E)"
+,Construction (Section F)
+,"Wholesale, Retail and Repairs (Section G)"
+,Transportation and Storage (Section H)
+,Accommodation and Food Services (Section I)
+,Information and Communication (Section J)
+,Financial and Insurance (Section K)
+,Real Estate Activities (Section L)
+,"Professional, Scientific & Technical (Section M)"
+,Administrative and Support Services (Section N)
+,Public administration and defence; compulsory social security (Section O)
+,Education (Section P)
+,Other Services (Section (Q-U)
