@@ -11,5 +11,5 @@ The project was titled "The Impact of China’s Economic Sanctions on Australian
 | | |
 |:-------------------------:|:-------------------------:|
 |<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart1.png?raw=true">|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart2.png?raw=true">
-|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart3.png?raw=true">|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart4.png?raw=true">|
+|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart3.png?raw=true">|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart4.png?raw=true">
 |<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart5.png?raw=true">|<img width="2406"| |
