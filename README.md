@@ -4,7 +4,7 @@ This repository contains the R code used to reproduce my visualisations for an E
 The project was titled "The Impact of China’s Economic Sanctions on Australian Exports".
 - The final report can be downloaded [here](https://github.com/andybridger/econpolicy/blob/main/econpolicy/policy_paper.pdf)
 - The PowerPoint presentation associated with the report can be found [here](https://github.com/andybridger/econpolicy/blob/main/econpolicy/policy_presentation.pdf)
-- An R Markdown file to replicate the charts can be found [here](https://twitter.com/AndyBridger)
+- The R code to replicate the charts can be found [here](https://github.com/andybridger/econpolicy/blob/main/econpolicy/chart_code.R)
 
 **Charts for Economic Policy Assignment**
 
