@@ -8,20 +8,7 @@ The project was titled "The Impact of China’s Economic Sanctions on Australian
 
 **Charts for Economic Policy Assignment**
 
-![](https://github.com/andybridger/uni/blob/main/econpolicy/chart1.png?raw=true)
-
-![](https://github.com/andybridger/uni/blob/main/econpolicy/chart2.png?raw=true)
-
-![](https://github.com/andybridger/uni/blob/main/econpolicy/chart3.png?raw=true)
-
-![](https://github.com/andybridger/uni/blob/main/econpolicy/chart4.png?raw=true)
-
-![](https://github.com/andybridger/uni/blob/main/econpolicy/chart5.png?raw=true)
-
-The following tables and plots were created using `modelsummary`, without any manual editing at all:
-
 | | |
-|:-------------------------:|:-------------------------:|
 |<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart1.png?raw=true">|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart2.png?raw=true">
 |<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart3.png?raw=true">|<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart4.png?raw=true">|
 |<img width="2406" src="https://github.com/andybridger/uni/blob/main/econpolicy/chart5.png?raw=true">|<img width="2406"|
