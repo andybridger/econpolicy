@@ -7,10 +7,18 @@ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"
 if(length(new.packages)) install.packages(new.packages)
 
 #load packages
-lapply(c('devtools', 'readabs', 'ggplot2', 'readr', 'dplyr', 'tidyr' , 'tidyverse', 'lubridate', 'andytheme'), require, character.only = TRUE)
+lapply(c('devtools', 'readabs', 'ggplot2', 'readr', 'dplyr', 'tidyr' , 'tidyverse', 'lubridate'), require, character.only = TRUE)
 
-#install theme package from GitHub
-install_github("andybridger/andytheme")
+#install mytheme package from GitHub
+install_github("andybridger/mytheme")
+library("mytheme")
+
+#define function my_y_continuous so that the y-axis starts at 0
+my_y_continuous <- function(expand_bottom = 0, expand_top = 0.15, ...) {
+  scale_y_continuous(expand = ggplot2::expansion(mult = c(expand_bottom,
+                                                          expand_top)),
+                     ...)
+}
 
 #####CHART 1#####
 #DOWNLOAD YEARLY DFAT DATA#
@@ -30,8 +38,8 @@ d_year_trade <- d_year_trade %>%
 #Make chart 1
 chart1 <- ggplot(d_year_trade, aes(x=Year, y=value, fill = Export)) + 
   geom_bar(position="stack", stat="identity")+
-  andy_y_continuous(limits = c(0, 150))+
-  andy_style()+
+  my_y_continuous(limits = c(0, 150))+
+  my_style()+
   scale_fill_manual(values=c("#009E73", "#0072B2", "#56B4E9","#cc79a7"))+
   labs(title = "Australian exports to China have increased substantially, largely
 because of resource exports",
@@ -120,8 +128,8 @@ chart2 <- d_china %>%
   geom_area(aes(fill = `SITC.3.digit`)) +
   stat_summary(fun = sum, geom = "line", size = 1) +
   scale_fill_manual(values=c("#0072B2","#cc79a7"))+
-  andy_y_continuous()+
-  andy_style()+
+  my_y_continuous()+
+  my_style()+
   labs(title="Australian exports to China rose and then fell largely due to price
 fluctuations of iron ore",
        subtitle="Monthly Australian exports (A$mn) of iron ore and 'other exports' to China",
@@ -168,14 +176,14 @@ chart3 <- d_trade %>%
   filter(`SITC.3.digit` %in% c("043 Barley", "263 Cotton", "321 Coal", "283 Copper ores & concentrates")) %>%
   ggplot(aes(x = date, y = value, group= Country, color = Country))+
   geom_line() +
-  andy_y_continuous()+
+  my_y_continuous()+
   scale_colour_manual(values = c("#E69F00","#0072B2"))+
   facet_wrap(~fct_relevel(`SITC.3.digit`,"043 Barley", "263 Cotton", "321 Coal", "283 Copper ores & concentrates"), ncol = 2, scales = "free", labeller = as_labeller(chart_names_1)) +
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="043 Barley"), aes(xintercept=as.Date("2020-05-01")), colour="black", linetype="dashed") + 
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="263 Cotton"), aes(xintercept=as.Date("2020-10-01")), colour="black", linetype="dashed") +
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="321 Coal"), aes(xintercept=as.Date("2020-10-01")), colour="black", linetype="dashed") + 
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="283 Copper ores & concentrates"), aes(xintercept=as.Date("2020-11-01")), colour="black", linetype="dashed") +
-  andy_style()+
+  my_style()+
   theme(strip.background =element_rect(fill="#0072B2"),
         strip.text = element_text(colour = 'white'),
         strip.text.x = element_text(angle = 0, hjust = 0.5),
@@ -216,14 +224,14 @@ chart4 <- d_trade %>%
   filter(`SITC.3.digit` %in% c("011 Beef, f.c.f.", "112 Alcoholic beverages","247 Wood, rough", "036 Crustaceans, f.c.f.")) %>%
   ggplot(aes(x = date, y = value, group= Country, color = Country))+
   geom_line() +
-  andy_y_continuous()+
+  my_y_continuous()+
   scale_colour_manual(values = c("#E69F00","#0072B2"))+
   facet_wrap(~fct_relevel(`SITC.3.digit`,"011 Beef, f.c.f.", "112 Alcoholic beverages","247 Wood, rough", "036 Crustaceans, f.c.f."), ncol = 2, scales = "free", labeller = as_labeller(chart_names_2)) +
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="011 Beef, f.c.f."), aes(xintercept=as.Date("2020-05-01")), colour="black", linetype="dashed") + 
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="112 Alcoholic beverages"), aes(xintercept=as.Date("2020-11-01")), colour="black", linetype="dashed") +
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="247 Wood, rough"), aes(xintercept=as.Date("2020-10-01")), colour="black", linetype="dashed") + 
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="036 Crustaceans, f.c.f."), aes(xintercept=as.Date("2020-11-01")), colour="black", linetype="dashed") +
-  andy_style()+
+  my_style()+
   theme(strip.background =element_rect(fill="#0072B2"),
         strip.text = element_text(colour = 'white'),
         strip.text.x = element_text(angle = 0, hjust = 0.5),
@@ -262,12 +270,12 @@ chart5 <- d_trade %>%
   filter(`SITC.3.digit` %in% c("036 Crustaceans, f.c.f.", "112 Alcoholic beverages")) %>%
   ggplot(aes(x = date, y = value, group= Country, color = Country))+
   geom_line() +
-  andy_y_continuous()+
+  my_y_continuous()+
   scale_colour_manual(values = c("#0072B2"))+
   facet_wrap(~fct_relevel(`SITC.3.digit`,"036 Crustaceans, f.c.f.", "112 Alcoholic beverages"), ncol = 2, scales = "free", labeller = as_labeller(chart_names_3)) +
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="036 Crustaceans, f.c.f."), aes(xintercept=as.Date("2020-11-01")), colour="black", linetype="dashed") + 
   geom_vline(data=filter(d_trade, `SITC.3.digit`=="112 Alcoholic beverages"), aes(xintercept=as.Date("2020-11-01")), colour="black", linetype="dashed") +
-  andy_style()+
+  my_style()+
   theme(strip.background =element_rect(fill="#0072B2"),
         strip.text = element_text(colour = 'white'),
         strip.text.x = element_text(angle = 0, hjust = 0.5),
